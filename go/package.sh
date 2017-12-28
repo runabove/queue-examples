@@ -5,8 +5,7 @@ ARCH="amd64"
 
 for GOOS in $OS; do
   for GOARCH in $ARCH; do
-    OS="$(tr '[:lower:]' '[:upper:]' <<< ${GOOS:0:1})${GOOS:1}"
-    architecture="${OS}-${GOARCH}"
+    architecture="${GOOS^}-${GOARCH}"
     echo "Building ${architecture}"
     export GOOS=$GOOS
     export GOARCH=$GOARCH
